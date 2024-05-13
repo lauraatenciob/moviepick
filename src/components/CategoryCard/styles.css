@@ -1,0 +1,22 @@
+.category-container {
+  padding: 16px;
+  width: 47%;
+  height: 52px;
+  background-color: #d9d9d946;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.category-title {
+  text-align: center;
+  font-weight: var(--font-weight-regular);
+}
+
+.category-container i {
+  font-size: 18px;
+  opacity: 75%;
+}

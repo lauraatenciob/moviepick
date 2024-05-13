@@ -1,0 +1,26 @@
+.recommend-container {
+  min-height: 80vh;
+  padding: 0 24px;
+  margin-top: 52px;
+}
+
+.welcome-text {
+  font-size: 32px;
+  font-weight: var(--font-weight-extraLight);
+  margin: 45px;
+  text-align: center;
+}
+
+.fontWeigth-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.recommend-category-title {
+  margin-bottom: 24px;
+}
+
+#recommend-btn {
+  width: 100%;
+  margin-top: 36px;
+  font-size: 16px;
+}

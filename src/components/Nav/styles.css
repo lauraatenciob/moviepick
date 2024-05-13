@@ -1,0 +1,43 @@
+#header {
+  padding-top: 40px;
+  padding: 0 24px;
+}
+
+#header-title {
+  font-family: var(--font-family-titles);
+  font-weight: var(--font-weight-light);
+  margin-bottom: 16px;
+}
+
+#header-searchForm {
+  background-color: var(--light-color);
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#header-searchForm:focus-within {
+  background-color: var(--blue-dark);
+}
+
+#input-btn {
+  background-color: transparent;
+  padding: 0 16px;
+  border-radius: 0 20px 20px 0;
+}
+
+#input-searchForm {
+  width: 100%;
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+  border-radius: 20px 0 0 20px;
+  font-size: 18px;
+  font-weight: var(--font-weight-light);
+  padding: 8px 8px 8px 16px;
+}
+
+#input-searchForm:focus {
+  outline: none;
+}

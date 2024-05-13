@@ -1,0 +1,37 @@
+.trendMovie-container {
+  display: inline-block;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.movieImg-container {
+  height: 215px;
+  min-height: 215px;
+  max-height: 215px;
+  width: 140px;
+  min-width: 140px;
+  max-width: 140px;
+}
+
+.movie-img {
+  border-radius: 12px;
+}
+
+.movieScore,
+.movieYear,
+.star {
+  display: inline;
+  font-size: 12px;
+}
+
+.movieYear {
+  padding-left: 16px;
+}
+
+.movieName {
+  margin: 8px 0;
+}
+
+.star {
+  color: #e0b20f;
+}

@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --blue-dark: #101c2d;
+  --blue-medium: #3e505b;
+  --white: #f8f8f8;
+  --light-color: #d9d9d97c;
+
+  --font-family-titles: "Dosis", sans-serif;
+  --font-family-text: "Commissioner", sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
+  --font-weight-extraLight: 200;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  background-color: var(--blue-medium);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  color: var(--white);
+  font-family: var(--font-family-text);
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 24px;
+  font-weight: var(--font-weight-medium);
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+}
+
+p {
+  font-size: 14px;
+  font-weight: var(--font-weight-light);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

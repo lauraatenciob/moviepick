@@ -1,0 +1,27 @@
+.trending-container {
+  margin-top: 52px;
+}
+
+.trending-header {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.trending-moreBtn {
+  background-color: transparent;
+  border: 1px solid var(--white);
+  padding: 6px 10px;
+}
+
+.trending-movieList {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 280px;
+  padding-left: 24px;
+  padding-bottom: 16px;
+  margin: 0;
+}
