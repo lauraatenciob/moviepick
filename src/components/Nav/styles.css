@@ -1,6 +1,5 @@
 #header {
-  padding-top: 40px;
-  padding: 0 24px;
+  padding: 40px 24px 0;
 }
 
 #header-title {
@@ -20,6 +19,11 @@
 #header-searchForm:focus-within {
   background-color: var(--blue-dark);
 }
+
+input::placeholder {
+    color: var(--white);
+    font-family: var(--font-family-text);
+  }
 
 #input-btn {
   background-color: transparent;

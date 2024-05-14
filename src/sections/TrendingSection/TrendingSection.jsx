@@ -1,4 +1,7 @@
+import "./styles.css";
 import MovieCard from "../../components/MovieCard/MovieCard";
+
+const apiKey = process.env.REACT_APP_API_KEY;
 
 function TrendingSection() {
   return (

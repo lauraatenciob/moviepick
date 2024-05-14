@@ -1,3 +1,4 @@
+import "./styles.css";
 import CategoryButton from "../../components/CategoryButton/CategoryButton";
 
 function RandomMovieSection() {

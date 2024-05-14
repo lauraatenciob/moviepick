@@ -1,3 +1,4 @@
+import "./styles.css";
 import { categories } from "../../sections/CategorySection/CategoriesSection";
 
 function CategoryButton() {

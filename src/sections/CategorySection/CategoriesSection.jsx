@@ -1,3 +1,4 @@
+import "./styles.css";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 
 export const categories = [
