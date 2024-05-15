@@ -30,11 +30,11 @@ export const categories = [
 
 function CategorySection() {
   return (
-    <section id="categories" class="categories-container">
-      <h2 class="categories-title">Categories</h2>
-      <article class="categories-list">
+    <section id="categories" className="categories-container">
+      <h2 className="categories-title">Categories</h2>
+      <article className="categories-list">
         {categories.map((category) => (
-          <CategoryCard title={category.title} icon={category.icon} />
+          <CategoryCard key={category.title} title={category.title} icon={category.icon} />
         ))}
       </article>
     </section>

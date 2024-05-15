@@ -1,6 +1,6 @@
 .trendMovie-container {
   display: inline-block;
-  margin-right: 8px;
+  margin-right: 16px;
   cursor: pointer;
 }
 
@@ -30,6 +30,10 @@
 
 .movieName {
   margin: 8px 0;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  max-width: 140px;
+  overflow: hidden;
 }
 
 .star {

@@ -2,9 +2,9 @@ import "./styles.css";
 
 function CategoryCard({ title, icon }) {
   return (
-    <div class="category-container">
-      <i class={`fa-solid fa-${icon}`}></i>
-      <h3 class="category-title">{title}</h3>
+    <div className="category-container">
+      <i className={`fa-solid fa-${icon}`}></i>
+      <h3 className="category-title">{title}</h3>
     </div>
   );
 }

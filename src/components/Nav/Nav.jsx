@@ -9,7 +9,7 @@ function Nav() {
       <form id="header-searchForm">
         <input id="input-searchForm" type="text" placeholder="Marvel" />
         <button id="input-btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
     </header>
