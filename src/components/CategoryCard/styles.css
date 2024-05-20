@@ -8,15 +8,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 }
 
 .category-title {
   text-align: center;
   font-weight: var(--font-weight-regular);
+  text-wrap: nowrap;
 }
 
 .category-container i {
-  font-size: 18px;
+  font-size: 14px;
   opacity: 75%;
+  line-height: 20px;
 }

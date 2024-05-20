@@ -1,5 +1,4 @@
 import "./styles.css";
-import CategoryButton from "../../components/CategoryButton/CategoryButton";
 
 function RandomMovieSection() {
   return (
@@ -8,8 +7,7 @@ function RandomMovieSection() {
         Let us <strong className="fontWeigth-medium">recommend</strong> a movie for
         you
       </h1>
-      <p className="recommend-category-title">Select a category</p>
-      <CategoryButton />
+      {/** <p className="recommend-category-title">Select a category</p> */}
       <button id="recommend-btn">Get a movie</button>
     </section>
   );

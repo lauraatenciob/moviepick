@@ -1,6 +1,6 @@
 import "./styles.css";
 
-function Nav() {
+function Nav({ isHomePage }) {
   return (
     <header id="header">
       <h1 id="header-title">
