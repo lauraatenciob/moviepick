@@ -1,6 +1,7 @@
 .category-container {
   padding: 16px;
-  width: 47%;
+  max-width: 149px;
+  width: 100%;
   height: 52px;
   background-color: #d9d9d946;
   border-radius: 15px;

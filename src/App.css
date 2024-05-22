@@ -75,3 +75,8 @@ button {
   font-family: var(--font-family-text);
 }
 
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

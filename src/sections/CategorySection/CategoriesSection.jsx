@@ -2,8 +2,9 @@ import "./styles.css";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import { useEffect, useState } from "react";
 import { getCategories } from "../../api/categories";
+import { Link } from "react-router-dom";
 
-const categoryIcons = {
+export const categoryIcons = {
   Action: "bomb",
   Adventure: "compass",
   Animation: "hat-wizard",
@@ -41,11 +42,17 @@ function CategorySection() {
       <h2 className="categories-title">Categories</h2>
       <article className="categories-list">
         {categories.map((category) => (
-          <CategoryCard
+          <Link
+            to={`/categories?category=${category.id}`}
             key={category.id}
-            title={category.name}
-            icon={categoryIcons[category.name] || "film"}
-          />
+            className="a-container"
+          >
+            <CategoryCard
+              key={category.id}
+              title={category.name}
+              icon={categoryIcons[category.name] || "film"}
+            />
+          </Link>
         ))}
       </article>
     </section>
