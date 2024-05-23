@@ -1,8 +1,8 @@
+import "./styles.css";
 import { useEffect, useState } from "react";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import Nav from "../../components/Nav/Nav";
-import "./styles.css";
 import { getMoviesByCategory } from "../../api/moviesbycategory";
 import { useSearchParams } from "react-router-dom";
 import { categoryIcons } from "../../sections/CategorySection/CategoriesSection";
@@ -25,19 +25,35 @@ function CategoryPage() {
   }, [categoryIds]);
 
   const onCategoryClick = (id) => {
-    searchParams.set("category", `${categoryIds},${id}`);
+    if (!categoryIds.includes(id)) {
+      console.log(categoryIds, categoryIds?.split(",").concat([id]));
+      searchParams.set(
+        "category",
+        categoryIds === "" ? id : categoryIds.split(",").concat([id]).join(",")
+      );
+    } else {
+      searchParams.set(
+        "category",
+        categoryIds
+          .split(",")
+          .filter((categoryId) => id.toString() !== categoryId)
+          .join(",")
+      );
+    }
     setSearchParams(searchParams);
   };
 
   return (
     <div id="categoryPage-container">
       <Nav />
-      <div id="categories-container" onClick={() => onCategoryClick(53)}>
+      <div id="categories-container">
         {categories.map((category) => (
           <CategoryCard
             key={category.id}
             title={category.name}
             icon={categoryIcons[category.name] || "film"}
+            onClickFuntion={() => onCategoryClick(category.id)}
+            selected={categoryIds.includes(category.id)}
           />
         ))}
       </div>

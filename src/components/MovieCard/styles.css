@@ -5,12 +5,7 @@
 }
 
 .movieImg-container {
-  height: 215px;
-  min-height: 215px;
-  max-height: 215px;
-  width: 140px;
-  min-width: 140px;
-  max-width: 140px;
+  aspect-ratio: 1 / 1.5;
 }
 
 .movie-img {

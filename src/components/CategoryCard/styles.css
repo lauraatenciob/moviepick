@@ -12,6 +12,10 @@
   gap: 8px;
 }
 
+.category-container.selected {
+  background-color: var(--blue-dark);
+}
+
 .category-title {
   text-align: center;
   font-weight: var(--font-weight-regular);
@@ -23,3 +27,4 @@
   opacity: 75%;
   line-height: 20px;
 }
+
