@@ -1,16 +1,18 @@
-import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import "./App.css";
-import CategoryPage from "./pages/CategoryPage/CategoryPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/categories" element={<CategoryPage />} />
-      </Routes>
+      <ScrollToTop />
+      <Outlet />
+      <ScrollRestoration
+        getKey={(location, matches) => {
+          return location.pathname;
+        }}
+      />
     </div>
   );
 }

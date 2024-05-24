@@ -45,7 +45,7 @@ function CategoryPage() {
 
   return (
     <div id="categoryPage-container">
-      <Nav />
+      <Nav isHomePage={false}/>
       <div id="categories-container">
         {categories.map((category) => (
           <CategoryCard

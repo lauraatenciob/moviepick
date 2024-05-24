@@ -16,5 +16,9 @@
 
 .a-container {
   width: 100%;
+  transition: background-color 200ms;
+}
 
+.a-container:focus {
+  background-color: var(--blue-dark);
 }

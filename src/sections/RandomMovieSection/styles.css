@@ -1,14 +1,15 @@
 .recommend-container {
-  min-height: 72vh;
+  height: calc(100vh - 170px);
   padding: 0 24px;
-  margin-top: 52px;
+  margin-top: 45px;
 }
 
 .welcome-text {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: var(--font-weight-extraLight);
-  margin: 45px;
+  margin: 0 45px;
   text-align: center;
+  padding-top: 64px;
 }
 
 .fontWeigth-medium {

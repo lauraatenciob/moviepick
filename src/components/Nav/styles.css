@@ -2,10 +2,22 @@
   padding: 40px 24px 0;
 }
 
+.header-backBtn {
+  font-size: 18px;
+  padding: 2px 8px;
+  margin-right: 8px;
+  border-radius: 15px;
+  transition: background-color 0.5s;
+}
+
+.header-backBtn:active {
+  background-color: var(--light-color);
+}
+
 #header-title {
   font-family: var(--font-family-titles);
   font-weight: var(--font-weight-light);
-  margin-bottom: 16px;
+  display: inline;
 }
 
 #header-searchForm {
@@ -14,6 +26,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 16px;
 }
 
 #header-searchForm:focus-within {
@@ -29,6 +42,7 @@ input::placeholder {
   background-color: transparent;
   padding: 0 16px;
   border-radius: 0 20px 20px 0;
+  height: 100%;
 }
 
 #input-searchForm {
@@ -44,4 +58,8 @@ input::placeholder {
 
 #input-searchForm:focus {
   outline: none;
+}
+
+.a-inputBtn-container {
+  min-height: 37px;
 }

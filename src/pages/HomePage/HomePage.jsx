@@ -10,7 +10,7 @@ function HomePage() {
   return (
     <div id="home-container">
       <div id="background-blur">
-        <Nav />
+        <Nav isHomePage={true}/>
         <RandomMovieSection />
         <TrendingSection />
         <CategorySection />
