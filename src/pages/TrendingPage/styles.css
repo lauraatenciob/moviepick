@@ -1,0 +1,14 @@
+.trending-title {
+  padding: 0 24px;
+  margin-top: 16px;
+}
+
+.trendMovieList-container {
+  padding: 0 24px;
+  margin-top: 24px;
+  margin-bottom: 36px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  width: 100%;
+}

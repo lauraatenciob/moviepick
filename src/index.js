@@ -8,6 +8,7 @@ import App from "./App";
 import HomePage from "./pages/HomePage/HomePage";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
+import TrendingPage from "./pages/TrendingPage/TrendingPage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "search",
         element: <SearchPage />,
+      },
+      {
+        path: "trending",
+        element: <TrendingPage />,
       },
     ],
   },

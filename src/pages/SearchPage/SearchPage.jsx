@@ -9,7 +9,6 @@ function SearchPage() {
   const [movieListBySearch, setMovieListBySearch] = useState([]);
   const [searchParams] = useSearchParams();
   const query = searchParams.get("search");
-  console.log(query)
 
   useEffect(() => {
     async function fetchData() {

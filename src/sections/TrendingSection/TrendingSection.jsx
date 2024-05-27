@@ -2,6 +2,7 @@ import "./styles.css";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import { useEffect, useState } from "react";
 import { getTrendingMoviesPreview } from "../../api/trendingMovies";
+import { Link } from "react-router-dom";
 
 function TrendingSection() {
   const [movies, setMovies] = useState([]);
@@ -19,7 +20,9 @@ function TrendingSection() {
     <section id="trending" className="trending-container">
       <div className="trending-header">
         <h2 className="trending-title">Trending</h2>
-        <button className="trending-moreBtn">See more</button>
+        <Link to={"/trending"}>
+          <button className="trending-moreBtn">See more</button>
+        </Link>
       </div>
       <article className="trending-movieList">
         {movies.map((movie) => (
