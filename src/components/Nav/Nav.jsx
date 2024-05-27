@@ -1,10 +1,13 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import "./styles.css";
 import { useState } from "react";
 
 function Nav({ isHomePage }) {
   const [searchParams] = useSearchParams();
-  const [inputValue, setInputValue] = useState(searchParams.get("search") ?? "");
+  const [inputValue, setInputValue] = useState(
+    searchParams.get("search") ?? ""
+  );
+  const navigate = useNavigate();
 
   function handleChangeInput(event) {
     setInputValue(event.target.value);
@@ -13,9 +16,9 @@ function Nav({ isHomePage }) {
   return (
     <header id="header">
       {!isHomePage && (
-        <Link to={"/"} className="header-backBtn">
+        <button onClick={() => navigate(-1)} className="header-backBtn">
           <i className="fa-solid fa-angle-left"></i>
-        </Link>
+        </button>
       )}
       <h1 id="header-title">
         movie<strong>pick</strong>

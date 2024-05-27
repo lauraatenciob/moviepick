@@ -7,6 +7,7 @@
   padding: 2px 8px;
   margin-right: 8px;
   border-radius: 15px;
+  background-color: transparent;
   transition: background-color 0.5s;
 }
 
