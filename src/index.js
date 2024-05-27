@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import TrendingPage from "./pages/TrendingPage/TrendingPage";
+import DetailPage from "./pages/DetailPage/DetailPage";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "trending",
         element: <TrendingPage />,
+      },
+      {
+        path: "detail",
+        element: <DetailPage />,
       },
     ],
   },

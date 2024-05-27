@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 function MovieCard( {imgUrl, name, score, year } ) {
   return (
-    <div className="trendMovie-container">
+    <Link to={"/detail"} className="trendMovie-container">
       <div className="movieImg-container">
         <img
           src= {imgUrl}
@@ -17,7 +18,7 @@ function MovieCard( {imgUrl, name, score, year } ) {
         </p>
         <p className="movieYear">{year}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
