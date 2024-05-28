@@ -23,6 +23,7 @@ function TrendingPage() {
       <div className="trendMovieList-container">
         {trendMovies.map((movie) => (
           <MovieCard
+            movieId={movie.id}
             key={movie.id}
             imgUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
             name={movie.title}
