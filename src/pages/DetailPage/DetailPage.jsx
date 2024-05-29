@@ -1,10 +1,10 @@
 import { useSearchParams } from "react-router-dom";
-import MovieCard from "../../components/MovieCard/MovieCard";
 import Nav from "../../components/Nav/Nav";
 import "./styles.css";
 import { useEffect, useState } from "react";
 import { getMovieById } from "../../api/movieById";
 import { categoryIcons } from "../../sections/CategorySection/CategoriesSection";
+import SimilarMoviesSection from "../../sections/SimilarMoviesSection/SimilarMoviesSection";
 
 function DetailPage() {
   const [searchParams] = useSearchParams();
@@ -49,35 +49,7 @@ function DetailPage() {
             ))}
           </div>
         </section>
-        <section className="similarMoviesSection-container">
-          <p className="similarMovies-text">Similar movies</p>
-          <div className="similarMovies-container">
-            <MovieCard
-              imgUrl={
-                "https://image.tmdb.org/t/p/w300/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg"
-              }
-              name={"Movie name"}
-              score={8}
-              year={1997}
-            />
-            <MovieCard
-              imgUrl={
-                "https://image.tmdb.org/t/p/w300/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg"
-              }
-              name={"Movie name"}
-              score={8}
-              year={1997}
-            />
-            <MovieCard
-              imgUrl={
-                "https://image.tmdb.org/t/p/w300/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg"
-              }
-              name={"Movie name"}
-              score={8}
-              year={1997}
-            />
-          </div>
-        </section>
+        <SimilarMoviesSection movieId={movieId}/>
       </div>
     </div>
   );
