@@ -30,10 +30,6 @@
 .movieTagline {
   font-size: 14px;
   font-weight: var(--font-weight-extraLight);
-  max-height: 36px;
-  text-overflow: ellipsis;
-  text-wrap: nowrap;
-  overflow: hidden;
   margin-top: 16px;
 }
 

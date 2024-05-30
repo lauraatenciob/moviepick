@@ -3,15 +3,13 @@ import { getTopRatedMovies } from "../../api/topRatedMovies";
 import RecommendedMovieCard from "../../components/RecommendedMovieCard/RecommendMovieCard";
 
 import "./styles.css";
+import { getMovieById } from "../../api/movieById";
 
 function RandomMovieSection() {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
   const [selectedRandomMovie, setSelectedRandomMovie] = useState(null);
 
-  function onRecommendBtnClick() {
-    setSelectedRandomMovie(recommendedMovies[0]);
-  }
-
+  
   useEffect(() => {
     async function fetchData() {
       const newRecommendedMovies = await getTopRatedMovies();
@@ -19,6 +17,20 @@ function RandomMovieSection() {
     }
     fetchData();
   }, []);
+
+  function randomIndFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
+  async function onRecommendBtnClick() {
+    const index = randomIndFromInterval(0, recommendedMovies.length - 1);
+    const selectedMovieId = recommendedMovies[index].id;
+    const newSelectedRandomMovie = await getMovieById(selectedMovieId);
+    setSelectedRandomMovie(newSelectedRandomMovie);
+    console.log(selectedRandomMovie)
+  };
+
+
 
   return (
     <section id="recommend" className="recommend-container">
@@ -35,9 +47,9 @@ function RandomMovieSection() {
             imgUrl={`https://image.tmdb.org/t/p/w300${selectedRandomMovie.poster_path}`}
             name={selectedRandomMovie.title}
             score={selectedRandomMovie.vote_average}
-            tagline={selectedRandomMovie.overview}
-            year={selectedRandomMovie.popularity}
-            duration={selectedRandomMovie.vote_count}
+            tagline={selectedRandomMovie.tagline}
+            year={selectedRandomMovie.release_date}
+            duration={selectedRandomMovie.runtime}
           />
         </div>
       )}

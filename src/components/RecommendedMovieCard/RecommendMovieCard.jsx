@@ -28,9 +28,9 @@ function RecommendedMovieCard({
       </div>
       <p className="movieTagline">{tagline}</p>
       <div className="detailsMovie-container">
-        <p>{year}</p>
+        <p>{year.slice(0,4)}</p>
         <p>|</p>
-        <p>{duration}</p>
+        <p>{duration} min</p>
         <p>|</p>
         <p>
           <i className="fa-solid fa-people-roof"></i>
