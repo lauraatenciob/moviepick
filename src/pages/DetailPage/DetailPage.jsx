@@ -33,10 +33,10 @@ function DetailPage() {
         <section className="info-section">
           <div className="header-detailPage">
             <h1 className="movie-title">{currentMovie?.title}</h1>
-            <h1 className="movie-score">
+            <span className="movie-score">
               <i className="fa-solid fa-star large-star"></i>{" "}
               {currentMovie?.vote_average.toFixed(1)}
-            </h1>
+            </span>
           </div>
 
           <p className="short-description">{currentMovie?.tagline}</p>

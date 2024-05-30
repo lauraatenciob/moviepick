@@ -7,14 +7,16 @@ function MovieCard({ imgUrl, name, score, year, movieId }) {
       <div className="movieImg-container">
         <img src={imgUrl} className="movie-img" alt={name} />
       </div>
-      <div className="movieInf-container">
+      <div className="movieInfo-container">
         <p className="movieName" title={name}>
           {name}
         </p>
-        <p className="movieScore">
-          <i className="fa-solid fa-star star"></i> {score.toFixed(1)}
-        </p>
-        <p className="movieYear">{year}</p>
+        <div className="movieDetails-container">
+          <p className="movieScore">
+            <i className="fa-solid fa-star star"></i> {score.toFixed(1)}
+          </p>
+          <p className="movieYear">{year}</p>
+        </div>
       </div>
     </Link>
   );

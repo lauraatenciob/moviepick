@@ -6,7 +6,7 @@
 .categories-list {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
   width: 100%;
 }
 

@@ -1,0 +1,44 @@
+.recommendedMovie-container {
+  margin: 0 auto;
+}
+
+.movieImg-container {
+  aspect-ratio: 1 / 1.5;
+  max-height: 40vh;
+  margin: 0 auto;
+}
+
+.movieInf-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.recommendedMovie-name {
+  font-size: 24px;
+  max-width: 270px;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  overflow: hidden;
+}
+
+.recommendedMovie-score {
+  display: inline;
+  font-size: 18px;
+}
+
+.movieTagline {
+  font-size: 14px;
+  font-weight: var(--font-weight-extraLight);
+  max-height: 36px;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.detailsMovie-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}

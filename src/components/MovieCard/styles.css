@@ -12,6 +12,11 @@
   border-radius: 12px;
 }
 
+
+.movieDetails-container {
+  margin-top: 4px;
+}
+
 .movieScore,
 .movieYear,
 .star {
@@ -24,11 +29,10 @@
 }
 
 .movieName {
-  margin: 8px 0;
   text-overflow: ellipsis;
   text-wrap: nowrap;
-  max-width: 140px;
   overflow: hidden;
+  max-width: 120px;
 }
 
 .star {
