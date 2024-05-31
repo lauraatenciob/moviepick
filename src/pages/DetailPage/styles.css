@@ -8,8 +8,8 @@
 .detailMovie-container {
   padding: 0 24px;
   margin-top: 50vh;
-  background: linear-gradient(#d9d9d9bd, #d9d9d91f);
-  backdrop-filter: blur(6px);
+  background: linear-gradient(#d9d9d991 60%, #d9d9d941);
+  backdrop-filter: blur(4px);
   border-radius: 25px 25px 0 0;
   box-shadow: 12px -12px 16px rgba(54, 54, 54, 0.021);
 }
@@ -17,6 +17,7 @@
 .header-detailPage {
   display: flex;
   justify-content: space-between;
+  gap: 8px;
   padding-top: 24px;
 }
 
@@ -65,3 +66,19 @@
   margin-right: 4px;
 }
 
+.watchProviders-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.watchProvider-logoContainer {
+  height: 25px;
+  width: 25px;
+}
+
+.watchProvider-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}

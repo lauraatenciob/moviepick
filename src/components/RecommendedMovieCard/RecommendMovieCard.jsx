@@ -9,6 +9,7 @@ function RecommendedMovieCard({
   tagline,
   year,
   duration,
+  watchProviders,
 }) {
   return (
     <Link
@@ -28,13 +29,22 @@ function RecommendedMovieCard({
       </div>
       <p className="movieTagline">{tagline}</p>
       <div className="detailsMovie-container">
-        <p>{year.slice(0,4)}</p>
+        <p>{year.slice(0, 4)}</p>
         <p>|</p>
         <p>{duration} min</p>
         <p>|</p>
-        <p>
-          <i className="fa-solid fa-people-roof"></i>
-        </p>
+        <span className="watchProviders-container">
+          {watchProviders?.map((watchProvider) => (
+            <div className="watchProvider-logoContainer" key={watchProvider.provider_id}>
+              <img
+                src={`https://image.tmdb.org/t/p/w300${watchProvider.logo_path}`}
+                className="watchProvider-img"
+                alt={watchProvider.provider_name}
+                key={watchProvider.provider_id}
+              />
+            </div>
+          ))}
+        </span>
       </div>
     </Link>
   );

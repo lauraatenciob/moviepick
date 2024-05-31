@@ -4,12 +4,13 @@ import RecommendedMovieCard from "../../components/RecommendedMovieCard/Recommen
 
 import "./styles.css";
 import { getMovieById } from "../../api/movieById";
+import { getWatchProvidersById } from "../../api/watchProvidersById";
 
 function RandomMovieSection() {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
   const [selectedRandomMovie, setSelectedRandomMovie] = useState(null);
+  const [watchProviders, setWatchProviders] = useState([]);
 
-  
   useEffect(() => {
     async function fetchData() {
       const newRecommendedMovies = await getTopRatedMovies();
@@ -20,17 +21,16 @@ function RandomMovieSection() {
 
   function randomIndFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
-  };
+  }
 
   async function onRecommendBtnClick() {
     const index = randomIndFromInterval(0, recommendedMovies.length - 1);
     const selectedMovieId = recommendedMovies[index].id;
     const newSelectedRandomMovie = await getMovieById(selectedMovieId);
     setSelectedRandomMovie(newSelectedRandomMovie);
-    console.log(selectedRandomMovie)
-  };
-
-
+    const newWatchProviders = await getWatchProvidersById(selectedMovieId);
+    setWatchProviders(newWatchProviders?.flatrate || []);
+  }
 
   return (
     <section id="recommend" className="recommend-container">
@@ -50,6 +50,7 @@ function RandomMovieSection() {
             tagline={selectedRandomMovie.tagline}
             year={selectedRandomMovie.release_date}
             duration={selectedRandomMovie.runtime}
+            watchProviders={watchProviders}
           />
         </div>
       )}

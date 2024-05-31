@@ -37,4 +37,21 @@
   display: flex;
   gap: 16px;
   margin-top: 16px;
+  align-items: center;
+}
+
+.watchProviders-container {
+  display: flex;
+  gap: 8px;
+}
+
+.watchProvider-logoContainer {
+  height: 20px;
+  width: 20px;
+}
+
+.watchProvider-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
 }

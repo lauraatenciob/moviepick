@@ -5,11 +5,13 @@ import { useEffect, useState } from "react";
 import { getMovieById } from "../../api/movieById";
 import { categoryIcons } from "../../sections/CategorySection/CategoriesSection";
 import SimilarMoviesSection from "../../sections/SimilarMoviesSection/SimilarMoviesSection";
+import { getWatchProvidersById } from "../../api/watchProvidersById";
 
 function DetailPage() {
   const [searchParams] = useSearchParams();
   const movieId = searchParams.get("movie");
   const [currentMovie, setCurrentMovie] = useState(null);
+  const [watchProviders, setWatchProviders] = useState([]);
 
   console.log(currentMovie);
 
@@ -17,6 +19,8 @@ function DetailPage() {
     async function fetchData() {
       const newCurrentMovie = await getMovieById(movieId);
       setCurrentMovie(newCurrentMovie);
+      const newWatchProviders = await getWatchProvidersById(movieId);
+      setWatchProviders(newWatchProviders?.flatrate || []);
     }
     fetchData();
   }, [movieId]);
@@ -25,7 +29,7 @@ function DetailPage() {
     <div
       className="detailPage-container"
       style={{
-        backgroundImage: `linear-gradient(#101c2d4b 65%, #3e505b), url(https://image.tmdb.org/t/p/w500${currentMovie?.poster_path})`,
+        backgroundImage: `linear-gradient(#101c2d90 8%, #f8f8f805, #3e505b 90%), url(https://image.tmdb.org/t/p/w500${currentMovie?.poster_path})`,
       }}
     >
       <Nav isHomePage={false} />
@@ -38,18 +42,39 @@ function DetailPage() {
               {currentMovie?.vote_average.toFixed(1)}
             </span>
           </div>
+          <span className="watchProviders-container">
+            {watchProviders?.map((watchProvider) => (
+              <div
+                className="watchProvider-logoContainer"
+                key={watchProvider.provider_id}
+              >
+                <img
+                  src={`https://image.tmdb.org/t/p/w300${watchProvider.logo_path}`}
+                  className="watchProvider-img"
+                  alt={watchProvider.provider_name}
+                  key={watchProvider.provider_id}
+                />
+              </div>
+            ))}
+          </span>
 
           <p className="short-description">{currentMovie?.tagline}</p>
           <p className="movie-description">{currentMovie?.overview}</p>
           <div className="movie-categories-container">
             {currentMovie?.genres.map((category) => (
               <div className="movie-category" key={category.id}>
-                <i className={`fa-solid fa-${categoryIcons[category.name]} category-icon`} key={category.id}></i> {category.name}
+                <i
+                  className={`fa-solid fa-${
+                    categoryIcons[category.name]
+                  } category-icon`}
+                  key={category.id}
+                ></i>{" "}
+                {category.name}
               </div>
             ))}
           </div>
         </section>
-        <SimilarMoviesSection movieId={movieId}/>
+        <SimilarMoviesSection movieId={movieId} />
       </div>
     </div>
   );
