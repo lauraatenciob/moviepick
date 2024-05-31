@@ -5,14 +5,21 @@
   background-repeat: no-repeat;
 }
 
-.detailMovie-container {
-  padding: 0 24px;
-  margin-top: 50vh;
-  background: linear-gradient(#d9d9d991 60%, #d9d9d941);
-  backdrop-filter: blur(4px);
+.detailMovie-blur {
+  background: linear-gradient(#b9b9b9a6 70%, #d9d9d986);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border-radius: 25px 25px 0 0;
+}
+
+.detailMovie-container {
+  background-color: #f8f8f813;
+  border-radius: 25px 25px 0 0;
+  padding: 0 24px;
+  margin-top: 45vh;
   box-shadow: 12px -12px 16px rgba(54, 54, 54, 0.021);
 }
+
 
 .header-detailPage {
   display: flex;
@@ -27,13 +34,16 @@
 }
 
 .movie-score {
-  font-weight: var(--font-weight-extraLight);
-  font-size: 32px;
+  font-weight: 100;
+  font-size: 36px;
+  display: flex;
   text-wrap: nowrap;
+  align-items: center;
+  gap: 3px;
 }
 
 .large-star {
-  font-size: 24px;
+  font-size: 30px;
   color: #e9bc19;
 }
 
@@ -69,7 +79,7 @@
 .watchProviders-container {
   display: flex;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 8px;
 }
 
 .watchProvider-logoContainer {

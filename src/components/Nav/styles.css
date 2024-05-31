@@ -23,6 +23,7 @@
 
 #header-searchForm {
   background-color: var(--light-color);
+  backdrop-filter: blur(4px);
   border-radius: 20px;
   width: 100%;
   display: flex;

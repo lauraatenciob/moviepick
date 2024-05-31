@@ -13,8 +13,6 @@ function DetailPage() {
   const [currentMovie, setCurrentMovie] = useState(null);
   const [watchProviders, setWatchProviders] = useState([]);
 
-  console.log(currentMovie);
-
   useEffect(() => {
     async function fetchData() {
       const newCurrentMovie = await getMovieById(movieId);
@@ -33,48 +31,50 @@ function DetailPage() {
       }}
     >
       <Nav isHomePage={false} />
-      <div className="detailMovie-container">
-        <section className="info-section">
-          <div className="header-detailPage">
-            <h1 className="movie-title">{currentMovie?.title}</h1>
-            <span className="movie-score">
-              <i className="fa-solid fa-star large-star"></i>{" "}
-              {currentMovie?.vote_average.toFixed(1)}
-            </span>
-          </div>
-          <span className="watchProviders-container">
-            {watchProviders?.map((watchProvider) => (
-              <div
-                className="watchProvider-logoContainer"
-                key={watchProvider.provider_id}
-              >
-                <img
-                  src={`https://image.tmdb.org/t/p/w300${watchProvider.logo_path}`}
-                  className="watchProvider-img"
-                  alt={watchProvider.provider_name}
+      <div className="detailMovie-blur">
+        <div className="detailMovie-container">
+          <section className="info-section">
+            <div className="header-detailPage">
+              <h1 className="movie-title">{currentMovie?.title}</h1>
+              <span className="movie-score">
+                <i className="fa-solid fa-star large-star"></i>{" "}
+                {currentMovie?.vote_average.toFixed(1)}
+              </span>
+            </div>
+            <span className="watchProviders-container">
+              {watchProviders?.map((watchProvider) => (
+                <div
+                  className="watchProvider-logoContainer"
                   key={watchProvider.provider_id}
-                />
-              </div>
-            ))}
-          </span>
+                >
+                  <img
+                    src={`https://image.tmdb.org/t/p/w300${watchProvider.logo_path}`}
+                    className="watchProvider-img"
+                    alt={watchProvider.provider_name}
+                    key={watchProvider.provider_id}
+                  />
+                </div>
+              ))}
+            </span>
 
-          <p className="short-description">{currentMovie?.tagline}</p>
-          <p className="movie-description">{currentMovie?.overview}</p>
-          <div className="movie-categories-container">
-            {currentMovie?.genres.map((category) => (
-              <div className="movie-category" key={category.id}>
-                <i
-                  className={`fa-solid fa-${
-                    categoryIcons[category.name]
-                  } category-icon`}
-                  key={category.id}
-                ></i>{" "}
-                {category.name}
-              </div>
-            ))}
-          </div>
-        </section>
-        <SimilarMoviesSection movieId={movieId} />
+            <p className="short-description">{currentMovie?.tagline}</p>
+            <p className="movie-description">{currentMovie?.overview}</p>
+            <div className="movie-categories-container">
+              {currentMovie?.genres.map((category) => (
+                <div className="movie-category" key={category.id}>
+                  <i
+                    className={`fa-solid fa-${
+                      categoryIcons[category.name]
+                    } category-icon`}
+                    key={category.id}
+                  ></i>{" "}
+                  {category.name}
+                </div>
+              ))}
+            </div>
+          </section>
+          <SimilarMoviesSection movieId={movieId} />
+        </div>
       </div>
     </div>
   );

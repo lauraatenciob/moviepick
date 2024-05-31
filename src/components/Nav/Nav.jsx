@@ -20,9 +20,11 @@ function Nav({ isHomePage }) {
           <i className="fa-solid fa-angle-left"></i>
         </button>
       )}
-      <h1 id="header-title">
-        movie<strong>pick</strong>
-      </h1>
+      <Link to={"/"}>
+        <h1 id="header-title">
+          movie<strong>pick</strong>
+        </h1>
+      </Link>
       <form id="header-searchForm">
         <input
           id="input-searchForm"
