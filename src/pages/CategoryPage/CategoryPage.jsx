@@ -7,6 +7,7 @@ import { getMoviesByCategory } from "../../api/moviesbycategory";
 import { useSearchParams } from "react-router-dom";
 import { categoryIcons } from "../../sections/CategorySection/CategoriesSection";
 import { getCategories } from "../../api/categories";
+import Container from "../../components/Container/Container";
 
 function CategoryPage() {
   const [movieList, setMovieList] = useState([]);
@@ -45,29 +46,31 @@ function CategoryPage() {
 
   return (
     <div id="categoryPage-container">
-      <Nav isHomePage={false}/>
-      <div id="categories-container">
-        {categories.map((category) => (
-          <CategoryCard
-            key={category.id}
-            title={category.name}
-            icon={categoryIcons[category.name] || "film"}
-            onClickFuntion={() => onCategoryClick(category.id)}
-            selected={categoryIds.includes(category.id)}
-          />
-        ))}
-      </div>
-      <div id="movies-container">
-        {movieList.map((movie) => (
-          <MovieCard
-            movieId={movie.id}
-            key={movie.id}
-            imgUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-            name={movie.title}
-            score={movie.vote_average}
-          />
-        ))}
-      </div>
+      <Container>
+        <Nav isHomePage={false} />
+        <div id="categories-container">
+          {categories.map((category) => (
+            <CategoryCard
+              key={category.id}
+              title={category.name}
+              icon={categoryIcons[category.name] || "film"}
+              onClickFuntion={() => onCategoryClick(category.id)}
+              selected={categoryIds.includes(category.id)}
+            />
+          ))}
+        </div>
+        <div id="movies-container">
+          {movieList.map((movie) => (
+            <MovieCard
+              movieId={movie.id}
+              key={movie.id}
+              imgUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+              name={movie.title}
+              score={movie.vote_average}
+            />
+          ))}
+        </div>
+      </Container>
     </div>
   );
 }

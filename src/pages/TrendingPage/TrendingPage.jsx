@@ -19,7 +19,7 @@ function TrendingPage() {
   return (
     <div id="trending-container">
       <Nav isHomePage={false} />
-      <h2 className="trending-title">Trending</h2>
+      <h2 className="trendingPage-title">Trending</h2>
       <div className="trendMovieList-container">
         {trendMovies.map((movie) => (
           <MovieCard

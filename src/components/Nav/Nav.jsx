@@ -15,6 +15,7 @@ function Nav({ isHomePage }) {
 
   return (
     <header id="header">
+      <span id="header-navSection">
       {!isHomePage && (
         <button onClick={() => navigate(-1)} className="header-backBtn">
           <i className="fa-solid fa-angle-left"></i>
@@ -25,6 +26,8 @@ function Nav({ isHomePage }) {
           movie<strong>pick</strong>
         </h1>
       </Link>
+      </span>
+      
       <form id="header-searchForm">
         <input
           id="input-searchForm"

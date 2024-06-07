@@ -1,10 +1,13 @@
 .recommend-container {
-  padding: 0 24px;
   margin: 10vh 0;
+  background-image: linear-gradient(#101c2da8, #101c2dd3),
+    url(https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  border-radius: 15px;
+  padding: 24px;
 }
 
 .welcome-text {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: var(--font-weight-extraLight);
   margin: 0 45px;
   text-align: center;
@@ -20,7 +23,26 @@
 }
 
 #recommend-btn {
+  background-color: var(--light-color);
+  backdrop-filter: blur(2px);
   width: 100%;
   margin-top: 16px;
   font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .recommend-container {
+    background-color: var(--light-color);
+    backdrop-filter: blur(4px);
+    padding: 40px 30px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #recommend-btn {
+    max-width: 236px;
+    margin: 0 auto;
+    font-size: 20px;
+  }
 }

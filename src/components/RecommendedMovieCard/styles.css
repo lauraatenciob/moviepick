@@ -2,20 +2,20 @@
   margin: 0 auto;
 }
 
-.movieImg-container {
+.recommendedMovie-container .movieImg-container {
   aspect-ratio: 1 / 1.5;
   max-height: 40vh;
   margin: 0 auto;
 }
 
-.movieInf-container {
+.recommendedMovie-container .movieInfo-headerContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 16px;
 }
 
-.recommendedMovie-name {
+.recommendedMovie-container .recommendedMovie-name {
   font-size: 22px;
   max-width: 270px;
   text-overflow: ellipsis;
@@ -23,40 +23,54 @@
   overflow: hidden;
 }
 
-.recommendedMovie-score {
+.recommendedMovie-container .recommendedMovie-score {
   display: inline;
   font-size: 20px;
 }
 
-.recommendedMovie-score .star {
-    font-size: 16px;
+.recommendedMovie-container .recommendedMovie-score .star {
+  font-size: 16px;
 }
 
-.movieTagline {
+.recommendedMovie-container .movieTagline {
   font-size: 14px;
   font-weight: var(--font-weight-extraLight);
   margin-top: 16px;
 }
 
-.detailsMovie-container {
+.recommendedMovie-container .detailsMovie-container {
   display: flex;
   gap: 16px;
   margin-top: 16px;
   align-items: center;
 }
 
-.watchProviders-container {
+.recommendedMovie-container .watchProviders-container {
   display: flex;
   gap: 8px;
 }
 
-.watchProvider-logoContainer {
+.recommendedMovie-container .watchProvider-logoContainer {
   height: 20px;
   width: 20px;
 }
 
-.watchProvider-img {
+.recommendedMovie-container .watchProvider-img {
   width: 100%;
   height: 100%;
   border-radius: 6px;
+}
+
+@media (min-width: 768px) {
+    .recommendedMovie-container .recommendedMovie-container {
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+
+  .recommendedMovie-container .movieImg-container {
+    max-height: 25vh;
+  }
 }

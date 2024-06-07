@@ -7,7 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
 }
 
 .trending-moreBtn {
@@ -20,7 +19,6 @@
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  padding-left: 24px;
   padding-bottom: 16px;
   margin: 0;
   display: flex;
@@ -31,4 +29,24 @@
 .trending-movieList .trendMovie-container {
   flex-shrink: 0;
   max-width: 150px;
+}
+
+@media (min-width: 768px) {
+  .trending-movieList::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .trending-movieList::-webkit-scrollbar-track {
+    background: var(--light-color); 
+  }
+   
+  .trending-movieList::-webkit-scrollbar-thumb {
+    background: var(--light-color);
+    border-radius: 5px;
+ 
+  }
+  
+  .trending-movieList::-webkit-scrollbar-thumb:hover {
+    background: var(--white); 
+  }
 }

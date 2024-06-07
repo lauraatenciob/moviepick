@@ -21,3 +21,32 @@
   flex-shrink: 0;
   max-width: 120px;
 }
+
+@media (min-width: 768px) {
+  .similarMoviesSection-container {
+    margin: 0;
+  }
+
+  .similarMovies-text {
+    margin-top: 36px;
+  }
+
+  .similarMovies-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .similarMovies-container::-webkit-scrollbar-track {
+    background: var(--light-color); 
+  }
+   
+  .similarMovies-container::-webkit-scrollbar-thumb {
+    background: var(--light-color); 
+    border-radius: 5px;
+  }
+  
+  .similarMovies-container::-webkit-scrollbar-thumb:hover {
+    background: var(--white); 
+  }
+
+
+}

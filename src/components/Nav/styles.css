@@ -1,5 +1,5 @@
 #header {
-  padding: 40px 24px 0;
+  padding: 40px 0 0;
 }
 
 .header-backBtn {
@@ -64,4 +64,25 @@ input::placeholder {
 
 .a-inputBtn-container {
   min-height: 37px;
+}
+
+@media (min-width: 768px) {
+  #header-title {
+    font-size: 34px;
+  }
+
+  #header-searchForm {
+    max-width: 360px;
+    margin-top: 0;
+  }
+
+  #header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1152px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+  }
+
 }
