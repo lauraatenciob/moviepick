@@ -40,7 +40,7 @@ function RandomMovieSection() {
           movie for you
         </h1>
       ) : (
-        <div className="recommendedMovie-container">
+        <div className="background-blur">
           <RecommendedMovieCard
             movieId={selectedRandomMovie.id}
             key={selectedRandomMovie.id}

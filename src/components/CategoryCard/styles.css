@@ -9,6 +9,16 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  box-shadow: 12px 12px 16px rgba(54, 54, 54, 0.20);
+  transition: transform 0.3s;
+}
+
+.category-container:hover {
+  transform: scale(1.1);
+}
+
+.category-container:focus {
+  background-color: var(--blue-dark);
 }
 
 .category-container.selected {

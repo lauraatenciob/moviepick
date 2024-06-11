@@ -1,5 +1,6 @@
 .categories-container {
   margin-top: 52px;
+  transition: transform 0.3s;
 }
 
 .categories-list {
