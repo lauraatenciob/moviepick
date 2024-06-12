@@ -4,23 +4,9 @@
 
 .similarMovies-text {
   font-size: 18px;
+  margin-bottom: 16px;
 }
 
-.similarMovies-container {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  padding-bottom: 16px;
-  margin: 16px 0;
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-}
-
-.similarMovies-container .trendMovie-container {
-  flex-shrink: 0;
-  max-width: 120px;
-}
 
 @media (min-width: 768px) {
   .similarMoviesSection-container {
@@ -30,23 +16,4 @@
   .similarMovies-text {
     margin-top: 36px;
   }
-
-  .similarMovies-container::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  .similarMovies-container::-webkit-scrollbar-track {
-    background: var(--light-color); 
-  }
-   
-  .similarMovies-container::-webkit-scrollbar-thumb {
-    background: var(--light-color); 
-    border-radius: 5px;
-  }
-  
-  .similarMovies-container::-webkit-scrollbar-thumb:hover {
-    background: var(--white); 
-  }
-
-
 }

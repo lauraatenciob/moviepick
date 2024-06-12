@@ -45,8 +45,7 @@
   transition: transform 0.3s;
 }
 
-#recommend-btn:focus {
-  
+#recommend-btn:active {
   transform: scale(0.9);
 }
 

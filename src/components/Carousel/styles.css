@@ -1,0 +1,59 @@
+.carousel {
+  position: relative;
+}
+
+.flex-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 16px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.flex-container .trendMovie-container {
+  flex-shrink: 0;
+  max-width: 150px;
+}
+
+.carouselBtn {
+  visibility: hidden;
+  background-color: var(--light-color);
+  backdrop-filter: blur(5px);
+  padding: 12px 16px;
+  position: absolute;
+  top: 35%;
+  transition: background-color transform 0.3s;
+}
+
+.carouselBtn:hover {
+  background-color: #d9d9d944;
+}
+
+.carouselBtn:active {
+  transform: scale(0.9);
+}
+
+#btn-right {
+  right: -2%;
+}
+
+#btn-left {
+  left: -2%;
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    margin: 0 16px;
+  }
+
+  .carouselBtn {
+    visibility: visible;
+  }
+
+  .flex-container {
+    overflow-x: hidden;
+  }
+}
