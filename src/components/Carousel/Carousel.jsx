@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import MovieCard from "../MovieCard/MovieCard";
 import "./styles.css";
 
-function Carousel({ movies }) {
+function Carousel({ items, renderItem }) {
   const containerRef = useRef(null);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [maxScrollLeft, setMaxScrollLeft] = useState(0);
@@ -16,7 +15,7 @@ function Carousel({ movies }) {
       left: 0,
       top: 0,
     });
-  }, [movies]);
+  }, [items]);
 
   function clickLeft() {
     containerRef.current?.scrollTo({
@@ -42,24 +41,14 @@ function Carousel({ movies }) {
     );
   }
 
-  console.log({ maxScrollLeft, scrollLeft });
-
   return (
     <div className="carousel">
       <article
         ref={containerRef}
         className="flex-container"
-        id="flex-container"
       >
-        {movies.map((movie) => (
-          <MovieCard
-            movieId={movie.id}
-            key={movie.id}
-            imgUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-            name={movie.title}
-            score={movie.vote_average}
-            year={movie.release_date.slice(0, 4)}
-          />
+        {items.map((item) => (
+          renderItem(item)
         ))}
       </article>
 

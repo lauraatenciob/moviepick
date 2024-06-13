@@ -8,6 +8,7 @@ import { useSearchParams } from "react-router-dom";
 import { categoryIcons } from "../../sections/CategorySection/CategoriesSection";
 import { getCategories } from "../../api/categories";
 import Container from "../../components/Container/Container";
+import Carousel from "../../components/Carousel/Carousel";
 
 function CategoryPage() {
   const [movieList, setMovieList] = useState([]);
@@ -48,17 +49,22 @@ function CategoryPage() {
     <div id="categoryPage-container">
       <Container>
         <Nav isHomePage={false} />
-        <div id="categories-container">
-          {categories.map((category) => (
-            <CategoryCard
-              key={category.id}
-              title={category.name}
-              icon={categoryIcons[category.name] || "film"}
-              onClickFuntion={() => onCategoryClick(category.id)}
-              selected={categoryIds.includes(category.id)}
-            />
-          ))}
+
+        <div className="carouselCategories-container">
+          <Carousel
+            items={categories}
+            renderItem={(category) => (
+              <CategoryCard
+                key={category.id}
+                title={category.name}
+                icon={categoryIcons[category.name] || "film"}
+                onClickFuntion={() => onCategoryClick(category.id)}
+                selected={categoryIds.includes(category.id)}
+              />
+            )}
+          />
         </div>
+
         <div id="movies-container">
           {movieList.map((movie) => (
             <MovieCard

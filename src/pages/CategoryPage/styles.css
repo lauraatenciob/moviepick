@@ -1,12 +1,5 @@
-#categories-container {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  padding: 16px 0 16px 8px;
+.carouselCategories-container {
   margin-top: 24px;
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
 }
 
 #movies-container {
@@ -22,22 +15,3 @@
   margin-right: 0;
 }
 
-@media (min-width: 768px) {
-
-  #categories-container::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  #categories-container::-webkit-scrollbar-track {
-    background: var(--light-color); 
-  }
-   
-  #categories-container::-webkit-scrollbar-thumb {
-    background: var(--light-color); 
-    border-radius: 5px;
-  }
-  
-  #categories-container::-webkit-scrollbar-thumb:hover {
-    background: var(--white); 
-  }
-}
