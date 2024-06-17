@@ -1,10 +1,12 @@
 import { useSearchParams } from "react-router-dom";
-import Nav from "../../components/Nav/Nav";
 import { useEffect, useState } from "react";
 import { getMoviesBySearch } from "../../api/moviesBySearch";
-import MovieCard from "../../components/MovieCard/MovieCard";
-import "./styles.css";
+import Nav from "../../components/Nav/Nav";
 import Container from "../../components/Container/Container";
+import MoviesGrid from "../../components/MoviesGrid/MoviesGrid";
+
+import "./styles.css";
+
 
 function SearchPage() {
   const [movieListBySearch, setMovieListBySearch] = useState([]);
@@ -23,17 +25,7 @@ function SearchPage() {
     <div>
       <Container>
         <Nav isHomePage={false} />
-        <div className="moviesBySearch-container">
-          {movieListBySearch.map((movie) => (
-            <MovieCard
-              movieId={movie.id}
-              key={movie.id}
-              imgUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-              name={movie.title}
-              score={movie.vote_average}
-            />
-          ))}
-        </div>
+        <MoviesGrid movieList={movieListBySearch} />
       </Container>
     </div>
   );

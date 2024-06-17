@@ -1,8 +1,12 @@
 import api from "./api";
 
-export async function getMoviesByCategory(categoryId) {
-  const { data } = await api("discover/movie?with_genres=" + categoryId);
+export async function getMoviesByCategory(categoryId, page) {
+  const { data } = await api("discover/movie", {
+    params: {
+      "with_genres" : categoryId,
+      "page" : page
+    },
+  });
 
-  const moviesByCategory = data.results;
-  return moviesByCategory;
+  return data;
 }

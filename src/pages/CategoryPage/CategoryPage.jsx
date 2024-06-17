@@ -1,7 +1,6 @@
 import "./styles.css";
 import { useEffect, useState } from "react";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
-import MovieCard from "../../components/MovieCard/MovieCard";
 import Nav from "../../components/Nav/Nav";
 import { getMoviesByCategory } from "../../api/moviesbycategory";
 import { useSearchParams } from "react-router-dom";
@@ -9,22 +8,35 @@ import { categoryIcons } from "../../sections/CategorySection/CategoriesSection"
 import { getCategories } from "../../api/categories";
 import Container from "../../components/Container/Container";
 import Carousel from "../../components/Carousel/Carousel";
+import MoviesGrid from "../../components/MoviesGrid/MoviesGrid";
 
 function CategoryPage() {
   const [movieList, setMovieList] = useState([]);
   const [categories, setCategories] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [totalPages, setTotalPages] = useState(1);
   const categoryIds = searchParams.get("category");
+  const currentPage = searchParams.get("page") ?? 1;
 
   useEffect(() => {
     async function fetchData() {
-      const newMovieList = await getMoviesByCategory(categoryIds);
-      setMovieList(newMovieList);
+      const moviesResponse = await getMoviesByCategory(
+        categoryIds,
+        currentPage
+      );
+      setMovieList(moviesResponse.results);
+      setTotalPages(moviesResponse.total_pages);
+    }
+    fetchData();
+  }, [categoryIds, currentPage]);
+
+  useEffect(() => {
+    async function fetchData() {
       const newCategories = await getCategories();
       setCategories(newCategories);
     }
     fetchData();
-  }, [categoryIds]);
+  }, []);
 
   const onCategoryClick = (id) => {
     if (!categoryIds.includes(id)) {
@@ -42,6 +54,12 @@ function CategoryPage() {
           .join(",")
       );
     }
+    searchParams.set("page", 1);
+    setSearchParams(searchParams);
+  };
+
+  const onPageClick = (Page) => {
+    searchParams.set("page", Page);
     setSearchParams(searchParams);
   };
 
@@ -65,16 +83,20 @@ function CategoryPage() {
           />
         </div>
 
-        <div id="movies-container">
-          {movieList.map((movie) => (
-            <MovieCard
-              movieId={movie.id}
-              key={movie.id}
-              imgUrl={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-              name={movie.title}
-              score={movie.vote_average}
-            />
-          ))}
+        <MoviesGrid movieList={movieList} />
+        
+        <div className="pagination-container">
+          {currentPage > 1 && (
+            <button className="btnPage" onClick={() => onPageClick(Number(currentPage) - 1)}>
+              <i className="fa-solid fa-angles-left"></i>
+            </button>
+          )}
+          <div className="page-number">{currentPage} of {totalPages}</div>
+          {currentPage < totalPages && (
+            <button className="btnPage" onClick={() => onPageClick(Number(currentPage) + 1)}>
+              <i className="fa-solid fa-angles-right"></i>
+            </button>
+          )}
         </div>
       </Container>
     </div>

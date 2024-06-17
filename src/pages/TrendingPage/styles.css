@@ -1,22 +1,8 @@
-.trendMovieList-container {
-  margin-top: 24px;
-  margin-bottom: 36px;
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  width: 100%;
-}
-
 .trendingPage-title {
   margin-top: 24px;
 }
 
 @media(min-width: 768px) {
-  .trendMovieList-container {
-    max-width: 1152px;
-    width: 100%;
-    margin: 36px auto;
-  }
 
   .trendingPage-title {
     max-width: 1152px;

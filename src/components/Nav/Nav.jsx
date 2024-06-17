@@ -1,6 +1,7 @@
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import "./styles.css";
 import { useState } from "react";
+import "./styles.css";
+
 
 function Nav({ isHomePage }) {
   const [searchParams] = useSearchParams();
