@@ -3,7 +3,7 @@ import "./styles.css";
 
 function MovieCard({ imgUrl, name, score, year, movieId }) {
   return (
-    <Link to={`/detail?movie=${movieId}`} className="trendMovie-container">
+    <Link to={`/detail?movie=${movieId}`} className="movie-container">
       <div className="movieImg-container">
         <img src={imgUrl} className="movie-img" alt={name} />
       </div>

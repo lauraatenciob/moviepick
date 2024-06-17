@@ -1,17 +1,17 @@
-.trendMovie-container {
+.movie-container {
   display: inline-block;
-  margin-right: 16px;
   cursor: pointer;
   transition: transform 0.3s;
 }
 
-.trendMovie-container:hover {
+.movie-container:hover {
   transform: scale(0.95);
 }
 
 
 .movieImg-container {
   aspect-ratio: 1 / 1.5;
+  min-width: 150px;
 }
 
 .movie-img {

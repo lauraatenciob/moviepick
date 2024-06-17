@@ -43,13 +43,8 @@ function Carousel({ items, renderItem }) {
 
   return (
     <div className="carousel">
-      <article
-        ref={containerRef}
-        className="flex-container"
-      >
-        {items.map((item) => (
-          renderItem(item)
-        ))}
+      <article ref={containerRef} className="flex-container">
+        {items.map((item) => renderItem(item))}
       </article>
 
       {scrollLeft > 0 && (
