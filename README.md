@@ -8,9 +8,9 @@ Moviepick is a web application focused on movies, designed to help users discove
 
 The home page contains several sections:
 
--**Random Recommended Movie:** Displays a randomly selected movie from a top-rated list.
--**Trending Movies:** Shows a list of movies currently trending updated daily.
--**Movie Genres:** Allows users to explore movies by different genres.
+- **Random Recommended Movie:** Displays a randomly selected movie from a top-rated list.
+- **Trending Movies:** Shows a list of movies currently trending updated daily.
+- **Movie Genres:** Allows users to explore movies by different genres.
 
 ### Genre Page
 
@@ -20,18 +20,18 @@ The genre page lists movies categorized by genre. Users can filter movies by one
 
 The movie details page provides comprehensive information about each movie:
 
--**Title:** The title of the movie.
--**Rating:** The rating or score of the movie.
--**Summary:** A brief overview or synopsis of the movie.
--**Genres:** The genres associated with the movie.
--**Streaming Provider:** Information on where the movie is available for streaming.
--**Similar Movies:** A list of related movies that users might also enjoy.
+- **Title:** The title of the movie.
+- **Rating:** The rating or score of the movie.
+- **Summary:** A brief overview or synopsis of the movie.
+- **Genres:** The genres associated with the movie.
+- **Streaming Provider:** Information on where the movie is available for streaming.
+- **Similar Movies:** A list of related movies that users might also enjoy.
 
 
 ## Technologies Used
 
--Frontend: HTML, CSS, React JS.
--Backend: The Movie Database (TMDB) API [https://developer.themoviedb.org/reference](https://developer.themoviedb.org/reference/intro/getting-started).
+- Frontend: HTML, CSS, React JS.
+- Backend: The Movie Database (TMDB) API [https://developer.themoviedb.org/reference](https://developer.themoviedb.org/reference/intro/getting-started).
 
 
 ## Installation
